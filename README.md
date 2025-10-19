@@ -1,9 +1,9 @@
-# TaskFlow ✨
+# TaskFlow (aka Doooit)
 
-TaskFlow is a clean, modern, and intuitive single-page to-do list application designed to help you manage your daily tasks with ease. It runs entirely in your browser and saves your data locally, ensuring your tasks are always there when you need them.
+TaskFlow is a clean, simple, and intuitive single-page to-do list application designed to help you manage your daily tasks with ease. It runs entirely in your browser and saves your data locally, ensuring your tasks are always there when you need them.
 
-![TaskFlow Application Screenshot](image_d58f2a.png)
-*(Replace `image_d58f2a.png` with a screenshot of your running application)*
+![TaskFlow Application Screenshot](Screenshot 2025-10-19 202855.png)
+
 
 ---
 
