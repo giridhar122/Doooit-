@@ -1,0 +1,186 @@
+:root {
+    --bg-color: #1e1f20;
+    --surface-color: #2a2b2c;
+    --primary-text-color: #e0e0e0;
+    --secondary-text-color: #9e9e9e;
+    --accent-color: #8ab4f8;
+    --error-color: #f28b82;
+    --font-family: 'Roboto', sans-serif;
+    --progress-bar-color: #34a853; /* Green for progress */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    height: 90vh;
+    max-height: 800px;
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    box-shadow: 0 8px M32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #3c4043;
+    text-align: center;
+}
+
+.app-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#datePicker {
+    background-color: #3c4043;
+    border: 1px solid #5f6368;
+    color: var(--primary-text-color);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+/* --- New Progress Bar Styles --- */
+.progress-container {
+    margin-top: 1.5rem;
+}
+.progress-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 0.5rem;
+}
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #3c4043;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--progress-bar-color);
+    border-radius: 4px;
+    transition: width 0.4s ease-in-out;
+}
+/* --- End New Styles --- */
+
+.task-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.task-list { list-style: none; }
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    animation: fadeIn 0.4s ease-in-out; /* Add animation */
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+
+.task-item .task-text {
+    flex-grow: 1;
+    font-size: 1rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: var(--secondary-text-color);
+}
+
+.delete-btn {
+    background: none; border: none;
+    color: var(--secondary-text-color);
+    font-size: 1.2rem; cursor: pointer;
+    padding: 0.5rem; border-radius: 50%;
+    opacity: 0.5; transition: opacity 0.2s ease, color 0.2s ease;
+}
+.task-item:hover .delete-btn { opacity: 1; }
+.delete-btn:hover { color: var(--error-color); }
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--secondary-text-color);
+}
+
+.app-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #3c4043;
+}
+
+.add-task-form { display: flex; gap: 0.5rem; }
+
+#taskInput {
+    flex-grow: 1;
+    background-color: #3c4043;
+    border: 1px solid #5f6368;
+    border-radius: 24px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    color: var(--primary-text-color);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+#taskInput:focus { border-color: var(--accent-color); }
+
+.add-task-form button {
+    background-color: var(--accent-color);
+    color: var(--bg-color); border: none;
+    border-radius: 50%; width: 48px; height: 48px;
+    font-size: 2rem; font-weight: 400;
+    cursor: pointer; flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+.add-task-form button:hover { background-color: #a6c8ff; }
+
+/* --- New Animation Keyframes --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
