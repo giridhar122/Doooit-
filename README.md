@@ -2,7 +2,7 @@
 
 TaskFlow is a clean, simple, and intuitive single-page to-do list application designed to help you manage your daily tasks with ease. It runs entirely in your browser and saves your data locally, ensuring your tasks are always there when you need them.
 
-![TaskFlow Application Screenshot](Screenshot 2025-10-19 202855.png)
+![TaskFlow Application Screenshot](Screenshot2025-10-19202855.png)
 
 
 ---
